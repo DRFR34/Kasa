@@ -1,8 +1,8 @@
 import React from 'react'
 
 import './Rating.scss'
-import activeStar from '../../src/assets/images/star-active.svg'
-import inactiveStar from '../../src/assets/images/star-inactive.svg'
+import activeStar from '../../assets/images/star-active.svg'
+import inactiveStar from '../../assets/images/star-inactive.svg'
 
 export default function Rating({score}) {
     const stars = [];

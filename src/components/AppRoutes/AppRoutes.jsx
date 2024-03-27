@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage.jsx';
 import About from '../../pages/About/About.jsx';
 import Page404 from '../../pages/Page404/Page404.jsx';
-import RentalOfferDetails from '../../componentsDrafts/RentalOfferDetails.jsx';
+import RentalOfferDetails from '../../components/RentalOfferDetails/RentalOfferDetails.jsx';
 
 export default function AppRoutes() {
   return (

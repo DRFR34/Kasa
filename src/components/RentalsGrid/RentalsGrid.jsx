@@ -1,6 +1,6 @@
 import React from 'react'
 import RentalsData from '../../assets/data/rentalsData.json'
-import RentalCard from './RentalCard'
+import RentalCard from '../RentalCard/RentalCard'
 import "./RentalsGrid.scss"
 
 export default function RentalsGrid() {

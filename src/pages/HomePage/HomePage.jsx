@@ -1,8 +1,9 @@
-import "../css/HomePage.css"
 import React from 'react'
-import RentalsGrid from "../../componentsDrafts/RentalsGrid"
-import Banner from "../../componentsDrafts/Banner"
-import homeBannerImg from "../../src/assets/images/homeBannerImg.png"
+import RentalsGrid from "../../components/RentalsGrid/RentalsGrid"
+import Banner from "../../components/Banner/Banner"
+import homeBannerImg from "../../assets/images/homeBannerImg.png"
+
+import "./HomePage.scss"
 
 export default function HomePage() {
   return (
