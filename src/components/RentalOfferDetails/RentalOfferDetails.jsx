@@ -1,13 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Page404 from '../../pages/Page404/Page404';
-import Slider1 from '../../componentsDrafts/Slider1';
-import Tags from '../../componentsDrafts/Tags';
-import Collapse from './Collapse'
+import Slider from '../../components/Slider/Slider'
+import Tags from '../../components/Tags/Tags';
+import Collapse from '../../components/Collapse/Collapse'
 import RentalsData from '../../assets/data/rentalsData.json'
 
 import "./RentalOfferDetails.scss"
-import Rating from '../../componentsDrafts/Rating';
+import Rating from '../Rating/Rating';
 export default function RentalOfferDetails() {
   const { rentalOfferId } = useParams();
   const rentalOffer = RentalsData.find((rentalOffer) => rentalOffer.id === rentalOfferId);
@@ -17,16 +17,15 @@ export default function RentalOfferDetails() {
   return (
     <div className='rentalOfferDetailsContainer'>
 
-
-
-      <Slider1 rentalOfferPictures={rentalOffer.pictures} />
-
+      <Slider rentalOfferPictures={rentalOffer.pictures} />
 
       <div className="rentalOfferSummary">
         <div className='title&Location'>
           <h1 className='rentalOfferTitle'>{rentalOffer.title}</h1>
           <span>{rentalOffer.location}</span>
+
           <Tags rentalOfferTags={rentalOffer.tags} />
+
         </div>
 
 
@@ -40,11 +39,14 @@ export default function RentalOfferDetails() {
               <img src={rentalOffer.host.picture} alt="portrait de l'hôte"></img>
             </div>
           </div>
+
           <Rating score={rentalOffer.rating} />
+
         </div>
       </div>
 
       <div className='rentalOfferCollapses'>
+
         <Collapse title='Description' content={rentalOffer.description} />
         <Collapse title='Équipements' content={rentalOffer.equipments} />
 
