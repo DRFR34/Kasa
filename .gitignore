@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 src/assetsDrafts/
-src/componentsDrafts/
+src/@componentsDrafts/
 src/cssDrafts/
 public/foo.js
 public/foo.html
