@@ -1,0 +1,46 @@
+@import "global.css";
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 0px;
+
+}
+.nav{
+    display:flex;
+    flex-direction: row;
+}
+
+ul {
+    list-style: none;
+}
+.nav-link{
+    color:var(--black-color);
+    /* font-family: 'Monserrat', sans-serif; */
+    font-size:23px;
+    font-weight: 600;
+    text-decoration: none;
+    padding : 0 20px;
+    
+}
+
+.nav-link:hover{
+    color:var(--red-color);
+}
+
+@media (max-width:576px){
+    .header{
+        padding: 2vw;
+    }
+    .nav-link{
+        font-size:12px;
+        padding:0;
+    }
+    .header img{
+        width:145px;
+    }
+    .item1{
+        padding-right: 15px;
+    }
+}
