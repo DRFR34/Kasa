@@ -1,0 +1,26 @@
+:root{
+
+    /* Variables */
+    --default-fontFamily: 'Montserrat', sans-serif;
+    --red-color: #FF6060;
+    --lightGrey-color: #F6F6F6;
+    --emptyStar-color:#E3E3E3;
+    --white-color:#ffffff;
+    --black-color:#000000;
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--default-fontFamily); 
+    }
+}
+
+.fa-solid, .fas {
+    /* font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands', sans-serif !important; */
+    font-family: 'Font Awesome 5 Free', sans-serif ;
+}
+.headerAndMain{
+    margin: auto;
+    max-width: 1240px;
+}
