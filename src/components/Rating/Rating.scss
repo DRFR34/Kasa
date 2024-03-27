@@ -1,0 +1,14 @@
+@mixin flexCenter {
+    display: flex;
+    place-items: center;
+}
+
+.ratingBox {
+    @include flexCenter;
+
+    .starBox {
+        @include flexCenter;
+        height: 36px;
+        width: 36px;
+    }
+}
