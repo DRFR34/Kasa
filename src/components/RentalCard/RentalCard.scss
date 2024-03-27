@@ -1,0 +1,54 @@
+.rentalCard {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.rentalCard:hover{
+    transform: scale(1.1);
+    transition-duration: .3s;
+}
+
+.rentalCard img{
+    /* display:none; */
+    height: 340px; 
+    z-index: -3;
+}
+
+.cardTextContainer{    
+    position:absolute;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+    border-radius: 15PX;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0));
+   
+}
+.rentalCard h2{     
+    position:absolute;
+    left:5.88%;
+    bottom:5.88%;
+    height:40px;
+    font-size:16px;
+    font-weight: bold;
+    color:var(--white-color);
+}
+
+@media (max-width:768px){
+    .rentalCard{
+        margin: 15px auto;
+        width: 85vw;;
+        height: 255px;
+        margin-bottom:30px;
+    }
+    .rentalCard:hover{
+        transform: scale(1.05);
+        transition-duration: .3s;
+    }
+}
