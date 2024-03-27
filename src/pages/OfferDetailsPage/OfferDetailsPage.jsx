@@ -1,13 +1,17 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Page404 from '../pages/Page404/Page404';
-import Slider1 from './Slider1';
-import Tags from './Tags';
-import Collapse from './Collapse'
-import RentalsData from '../assets/data/rentalsData.json'
 
-import "./RentalOfferDetails.scss"
-import Rating from './Rating';
+import Page404 from '../Page404/Page404';
+
+import Slider from '../../components/Slider/Slider';
+import Tags from '../../components/Tags/Tags';
+import Collapse from '../../components/Collapse/Collapse'
+import Rating from '../../components/Rating/Rating';
+
+import RentalsData from '../../assets/data/rentalsData.json'
+
+import "./OfferDetailsPage.scss"
+
 export default function RentalOfferDetails() {
   const { rentalOfferId } = useParams();
   const rentalOffer = RentalsData.find((rentalOffer) => rentalOffer.id === rentalOfferId);
@@ -19,7 +23,7 @@ export default function RentalOfferDetails() {
 
 
 
-      <Slider1 rentalOfferPictures={rentalOffer.pictures} />
+      <Slider rentalOfferPictures={rentalOffer.pictures} />
 
 
       <div className="rentalOfferSummary">
