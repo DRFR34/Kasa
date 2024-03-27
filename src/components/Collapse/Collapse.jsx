@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../css/Collapse.scss"
+import "./Collapse.scss"
 
 export default function Collapse({ title, content }) {
     const [isExpanded, setIsExpanded] = useState(false);
