@@ -1,0 +1,32 @@
+$gap-size: 2vw;
+
+.rentalsGrid {
+    margin: 50px 0;
+    border-radius: 25px;
+    padding: 60px;
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $gap-size; /* Définit à la fois le row-gap et le column-gap */
+    place-items: center; /* Ajoutez cette ligne pour centrer les enfants */
+}
+
+@media (max-width:1200px){
+    .rentalsGrid{
+        margin: 0;
+        width: 90vw;
+        padding:0;
+        grid-template-columns: 1fr 1fr;
+        // place-items: center;
+    }
+}
+
+@media (max-width:768px){
+    .rentalsGrid{
+        margin: 0;
+        width: 90vw;
+        padding:0;
+        grid-template-columns: 1fr;
+        // place-items: center;
+    }
+}
