@@ -1,0 +1,53 @@
+@import "./src/scss/VariablesAndMixins";
+
+html {
+    font-size: 16px;
+
+    @include tablet-view {
+        font-size: 12px;
+    }
+
+    @include mobile-view {
+        font-size: 8px;
+    }
+}
+
+:root {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: $default-fontFamily;
+    }
+
+    a {
+        text-underline-offset: .19rem;
+
+        &:visited {
+            color: inherit;
+        }
+    }
+
+}
+
+.headerAndMain {
+    margin: auto;
+    width: 95vw;
+    max-width: 1240px;
+    padding: 10px 0 0 0;
+
+    @include tablet-view {
+        width: $headerAndMain-responsive-width;
+        padding: 0;
+    }
+
+    @include mobile-view { 
+        padding: 0;
+    }
+}
+
+.fa-solid,
+.fas {
+    font-family: 'Font Awesome 5 Free', sans-serif;
+}
