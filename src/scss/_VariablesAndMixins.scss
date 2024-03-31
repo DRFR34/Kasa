@@ -1,0 +1,40 @@
+//== VARIABLES ==
+
+$breakpoints : (
+    tablet : 1250px,
+    mobile : 700px,
+);
+
+
+$default-fontFamily: 'Montserrat', sans-serif;
+
+$red-color: #FF6060;
+$lightGrey-color: #F6F6F6;
+$emptyStar-color: #E3E3E3;
+$white-color: #ffffff;
+$black-color: #000000;
+$arrowBoxHover-color: rgba(0, 0, 0, 0.233);
+
+$headerAndMain-responsive-width: 90vw;
+
+//== MIXINS ==
+
+//-- flex --
+@mixin flexCenter {
+    display: flex;
+    place-items: center;
+}
+
+//-- responsive --
+
+@mixin tablet-view {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin mobile-view {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
