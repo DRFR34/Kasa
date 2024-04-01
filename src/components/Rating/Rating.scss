@@ -1,14 +1,16 @@
-@mixin flexCenter {
-    display: flex;
-    place-items: center;
-}
+@import "../../scss/VariablesAndMixins";
 
 .ratingBox {
     @include flexCenter;
+    padding: 0 0 0.75rem 0;
 
     .starBox {
         @include flexCenter;
-        height: 36px;
-        width: 36px;
+        height: 2.25rem;
+        width: 2.25rem;
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
 }
