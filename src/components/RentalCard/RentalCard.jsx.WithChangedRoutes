@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function RentalCard({ rentalOffer }) {
   return (
-    <Link to={`/locations/${rentalOffer.id}`}>
+    <Link to={`/Kasa/locations/${rentalOffer.id}`}>
       <article className="rentalCard">
         <img className='rentalCard__coverImg' src={rentalOffer.cover} alt={rentalOffer.title} />
         <div className='rentalCard__textBox'>

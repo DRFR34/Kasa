@@ -8,10 +8,10 @@ import OfferDetailsPage from '../pages/OfferDetailsPage/OfferDetailsPage.jsx';
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/Kasa" element={<HomePage />} />
-      <Route path="/Kasa/a-propos" element={<AboutPage />} />
-      <Route path="/Kasa/locations/:rentalOfferId" element={<OfferDetailsPage />} />
-      <Route path="/Kasa/*" element={<Page404 />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/a-propos" element={<AboutPage />} />
+      <Route path="/locations/:rentalOfferId" element={<OfferDetailsPage />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 }

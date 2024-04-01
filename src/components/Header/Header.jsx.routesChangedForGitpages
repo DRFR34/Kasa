@@ -16,14 +16,14 @@ export default function Header() {
           className={({ isActive }) =>
             isActive ? 'header__nav__link isActive' : 'header__nav__link'
           }
-          to="/">
+          to="/Kasa/">
           Accueil
         </NavLink>
         <NavLink
           className={(({ isActive }) =>
             isActive ? 'header__nav__link isActive' : 'header__nav__link'
           )}
-          to="/a-propos">
+          to="/Kasa/a-propos">
           A Propos
         </NavLink>
       </nav>
