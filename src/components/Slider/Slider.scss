@@ -1,93 +1,100 @@
-*{
-    --slidesTransition-time :0.3s;
-}
+@import "../../scss/VariablesAndMixins";
 
+//== Slider Variables
+$slides-transitionTime: 0.3s;
+$slider-height: 25.94rem;
+$slider-arrowsSize: 5rem;
+$slider-mobile-height: 33rem;
+$slider-mobile-arrowsSize: 3rem;
+$pictureRankBox-height: 3.125rem;
+$pictureRankBox-background: radial-gradient(rgba(10, 10, 10, 0.39), rgba(9, 9, 9, 0), rgba(9, 9, 9, 0));
 
-
-.sliderContainer{
+.sliderContainer {
     position: relative;
+    max-width: 77.5rem;
+    height: $slider-height;
+    border-radius: 1.563rem;
     display: flex;
-    width: 1240px;
-    height: 415px;
-    overflow: hidden;
     align-items: center;
-    background-color: red;
+    overflow: hidden;
+    background-color: $lightGrey-color;
+    @include mobile-view {
+        height: $slider-mobile-height;
+    }
 
+    .slide {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: $slider-height;
+        transform: translateX(100%);
+        align-items: center;
+        @include mobile-view {
+            height: $slider-mobile-height;
+        }
+
+        img {
+            max-width: 100%;
+            min-height: $slider-height;
+            @include mobile-view {
+                min-width: 100%;
+                height: $slider-mobile-height;
+            }
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+
+        &.next {
+            transform: translateX(+100%);
+        }
+
+        &.previous {
+            transform: translateX(-100%);
+        }
+    }
 }
 
 
-.rentalOfferPicture{
-    place-self: center;
-}
-
-.arrowBox{
+.arrowBox {
     position: absolute;
-    height: 100%;
-    padding: 10px;
-    /* border: solid 2px red; */
-    color: var(--white-color);
-    font-size: 80px;
-    line-height: 415px;
-    /* background-color: var(--red-color); */
+    height: $slider-height;
+    padding: 0.625rem;
+    color: $white-color;
+    font-size: $slider-arrowsSize;
+    line-height: $slider-height;
+    @include mobile-view {
+        height: $slider-mobile-height;
+        line-height: $slider-mobile-height ;
+        font-size: $slider-mobile-arrowsSize;
+    }
+
+    &:hover {
+        background-color: $arrowBoxHover-color;
+    }
+
+    &.previous {
+        left: 0;
+        top: 0;
+    }
+
+    &.next {
+        right: 0;
+        top: 0;
+    }
 }
 
-.arrowBox:hover,
-.arrowBox:hover{
-    background-color: rgba(0, 0, 0, 0.233);
-}
-
-.previous{
-    left: 0;
-    top: 0;
-}
-
-.next{
-    right: 0;
-    top: 0;
-}
-
-.pictureRankBox{
-    position:absolute;
+.pictureRankBox {
+    position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 50px;
-    /* border: solid 2px greenyellow; */
-    background: radial-gradient(rgba(10, 10, 10, 0.39),rgba(9, 9, 9, 0), rgba(9, 9, 9, 0));    
+    width: 3.75rem;
+    height: $pictureRankBox-height;
+    background: $pictureRankBox-background;
     text-align: center;
-    line-height: 50px;
+    line-height: $pictureRankBox-height;
     font-weight: 700;
-    color: var(--white-color);
-
+    color: $white-color;
 }
-
-.slide {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    /* opacity: 0;  */
-    opacity: 1;
-    /* transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
-    transform: translateX(100%);
-    align-items: center;
-  }
-  
-  .slide.active{
-    opacity: 1;
-    transform: translateX(0);
-    /* transition: opacity --slidesTransition-time ease-in-out, transform --slidesTransition-time ease-in-out; */
-  }
-
-  .slide.next{
-    opacity: 1;
-    transform: translateX(+100%);
-    /* transition: opacity --slidesTransition-time ease-in-out, transform --slidesTransition-time ease-in-out; */
-  }
-
-  .slide.previous{
-    opacity: 1;
-    transform: translateX(-100%);
-    /* transition: opacity --slidesTransition-time ease-in-out, transform --slidesTransition-time ease-in-out; */
-  }
