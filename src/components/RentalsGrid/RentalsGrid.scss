@@ -1,32 +1,29 @@
-$gap-size: 2vw;
+@import "../../scss/VariablesAndMixins";
 
 .rentalsGrid {
-    margin: 50px 0;
-    border-radius: 25px;
-    padding: 60px;
-    background-color: #f7f7f7;
+    margin: 2.813rem 0;
+    border-radius: 1.25rem;
+    padding: 3.438rem;
+    background-color: $lightGrey-color;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: $gap-size; /* Définit à la fois le row-gap et le column-gap */
-    place-items: center; /* Ajoutez cette ligne pour centrer les enfants */
-}
+    gap: 3.125rem;
+    place-items: center;
 
-@media (max-width:1200px){
-    .rentalsGrid{
-        margin: 0;
-        width: 90vw;
-        padding:0;
+    @include tablet-view {
+        margin: 2.5rem auto;
+        width: $headerAndMain-responsive-width;
+        padding: 2rem;
         grid-template-columns: 1fr 1fr;
-        // place-items: center;
+    }
+
+    @include mobile-view {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 !important;
+        background-color: $white-color;
+        gap: 0;
     }
 }
 
-@media (max-width:768px){
-    .rentalsGrid{
-        margin: 0;
-        width: 90vw;
-        padding:0;
-        grid-template-columns: 1fr;
-        // place-items: center;
-    }
-}
