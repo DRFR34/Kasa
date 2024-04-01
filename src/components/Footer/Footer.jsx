@@ -8,17 +8,16 @@ import footerlogo from '../../assets/images/footerlogo.png';
 
 export default function Footer() {
   return (
-    <div className='footer'>
-      {/* className = "img-fluid" utilisation pour que la résolution de l'image ne se détériore pas sur les appareils mobiles ou lorsque nous réduisons l'écran.. */}
-      <div className='footer-logo'>
+    <footer className='footer'>
+      <div className='footer__logo'>
         <NavLink to="/">
           <img src={footerlogo} alt='Kasa' />
         </NavLink>
       </div>
-      <p className='footer-text'>
+      <p className='footer__text'>
         ⓒ  2024 Kasa. All rights reserved.
 
       </p>
-    </div>
+    </footer>
   )
 }
