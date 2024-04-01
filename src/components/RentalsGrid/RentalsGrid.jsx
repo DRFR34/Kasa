@@ -5,11 +5,11 @@ import "./RentalsGrid.scss"
 
 export default function RentalsGrid() {
   return (
-    <div className="rentalsGrid">
+    <section className="rentalsGrid">
       {RentalsData.map((rentalOffer) => (
                 <RentalCard key={rentalOffer.id} rentalOffer={rentalOffer} />
             ))}
 
-    </div>
+    </section>
   )
 }
