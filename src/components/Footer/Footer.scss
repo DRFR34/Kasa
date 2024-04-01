@@ -1,33 +1,29 @@
-.footer{
-    margin: 0;
-    /* bottom: 0; */
-    background-color: black;
-    color:white;
-    height: 200px;
-    display:flex;
-    align-items: center;
+@import "../../scss/VariablesAndMixins";
+
+.footer {
+    padding: 4.5rem 0 2rem;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: $black-color;
+    color: $white-color;
     flex-direction: column;
-}
-.footer-logo{
-    margin-top:60px;
-}
 
-.footer svg{
-    right:75.14%;
-}
-.footer-text{
-    margin-top:30px;
-    font-size:24px;
-    font-weight: 500;
-}
-
-@media (max-width:768px){
-    .footer-logo{
-        margin-top:20px;
+    @include mobile-view {
+        height: 26.2rem;
+        padding: 2.5rem 0;
     }
-    .footer-text{
-        font-size:12px;
-        margin-top:20px;
+
+    &__text {
+        padding: 2.5rem 0 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        @include mobile-view {
+            padding: 1.175rem 0 0;
+            width: 16.75rem;
+            text-align: center;
+            line-height: 2rem;
+        }
     }
 }
