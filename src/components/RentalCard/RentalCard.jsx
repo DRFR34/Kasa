@@ -6,14 +6,13 @@ import { Link } from 'react-router-dom';
 
 export default function RentalCard({ rentalOffer }) {
   return (
-    <div className="rentalCard">
     <Link to={`/locations/${rentalOffer.id}`}>
-        <img src={rentalOffer.cover} alt={rentalOffer.title} />
-        <div className='cardTextContainer'>
-          <h2>{rentalOffer.title}</h2>
+      <article className="rentalCard">
+        <img className='rentalCard__coverImg' src={rentalOffer.cover} alt={rentalOffer.title} />
+        <div className='rentalCard__textBox'>
+          <h2 className='rentalCard__textBox__text'>{rentalOffer.title}</h2>
         </div>
-        
+      </article>
     </Link>
-</div>
   )
 }
