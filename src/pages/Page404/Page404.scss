@@ -1,24 +1,38 @@
+@import "../../scss/VariablesAndMixins";
+
+
 .errorCode{
-    padding: 65px;
+    padding: 4.063rem;
     text-align: center;
-    color: var(--red-color);    
-    font-size: 288px;
-    font-weight: 900;
+    color: $red-color;
+    font-size: 18rem;
+    font-weight: 700;
+    @include mobile-view  {
+        padding: 4.063rem;
+        font-size: 12rem;
+    }
 }
 
 .errorMsg{
-    padding:20px;
+    padding:1.25rem;
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: center;  
     text-align: center;
-    color: var(--red-color);
-    font-size: 36px;
+    color: $red-color;
+    font-size: 2.25rem;
     font-weight: 500;
 }
 
 .linkToHome{
     display: block;
     width: 100%;
-    padding: 130px;
+    padding: 8.125rem 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    @include mobile-view  {
+        font-size: 1.75rem;
+    }
 
 }
