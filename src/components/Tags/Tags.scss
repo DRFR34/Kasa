@@ -1,23 +1,35 @@
-.tagsContainer{
-    // max-width: 500px;
+@import "../../scss/VariablesAndMixins";
+
+.tagsContainer {
     padding: 0.625rem 0 0;
     display: flex;
-    justify-content:flex-start;
-    gap:0.7rem;
-}
+    justify-content: flex-start;
+    gap: 0.7rem;
 
-.tagElet{
-    display: block;
-    min-width: 7.188rem;
-    height: 1.563rem;
-    border-radius: 0.625rem;
-    padding: 0px 0.625rem;
-    background-color: var(--red-color);
-    color: var(--white-color);
-    text-align: center;
-    // line-height: 25px;
-    // font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height:1.625rem ;
+    @include mobile-view {
+        padding: 0.625rem 0 1.5rem;
+        gap: 1.3rem;
+    }
+
+    &__tag {
+        display: block;
+        min-width: 7.188rem;
+        height: 1.563rem;
+        border-radius: 0.625rem;
+        padding: 0px 0.625rem;
+        background-color: $red-color;
+        color: $white-color;
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.625rem;
+        @include mobile-view {           
+            min-width: 10rem;
+            height: 2.25rem;
+            padding: 0 1.25rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            line-height: 2.25rem;
+        }
+    }
 }
