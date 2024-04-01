@@ -1,84 +1,87 @@
-.rentalCard {
-    position: relative;
-    width: 21.25rem;
-    height: 21.25rem;
-    border-radius: 0.938rem;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    /* background-color: red; */
-}
+@import "../../scss/VariablesAndMixins";
 
-.rentalCard:hover{
+//== RentalCard's variables ==
+$card-desktop-height : 21.25rem;
+$card-desktop-width : 21.25rem;
+$card-tablet-height : 31.98rem;
+$card-tablet-width : 40vw;
+$card-mobile-height : 31.98rem;
+$card-mobile-width : $headerAndMain-responsive-width;
+$card-transition-time :0.3s;
+$card-bckg-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+
+.rentalCard {
+  position: relative;
+  width: $card-desktop-width;
+  height: $card-desktop-height ;
+  border-radius: 0.938rem;
+  @include flexCenter;
+  overflow: hidden;
+
+  @include tablet-view {
+    margin: 1.25rem auto;
+    width: $card-tablet-width;
+    margin-bottom: 2.5rem;
+  }
+
+  @include mobile-view {
+    margin: 0 auto 2.5rem;
+    width: $card-mobile-width;
+    height: $card-mobile-height;
+  }
+
+  &:hover {
     transform: scale(1.1);
     transition-duration: .3s;
-}
 
-.rentalCard img{
-    /* display:none; */
-    height: 340px; 
-    z-index: -3;
-}
+    @include mobile-view {
+      transform: scale(1.05);
+      transition-duration: $card-transition-time;
+    }
+  }
 
-.cardTextContainer{    
-    position:absolute;
+  &__coverImg {
+    height: $card-desktop-height ;
+
+    @include tablet-view {
+      width: $card-tablet-width;
+      min-height: $card-tablet-height ;
+    }
+
+    @include mobile-view {
+      width: $card-mobile-width;
+      min-height: $card-mobile-height;
+    }
+  }
+
+  &__textBox {
+    position: absolute;
     left: 0;
-    right:0;
+    right: 0;
     top: 0;
     bottom: 0;
-    border-radius: 15PX;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0));
-   
-}
-.rentalCard h2{     
-    position:absolute;
-    left:0;
-    bottom:0;
-    // height:40px;
-    margin: 0;
-    padding: 0 1.5rem 1.8rem 1.5rem !important;
-    font-size:18px;
-    font-weight: 600;
-    line-height: 1.8rem ;
-    color:var(--white-color);
-}
+    border-radius: 0.938rem;
+    background: $card-bckg-gradient;
 
-@media (max-width:1250px){
-    .rentalCard{
-        margin: 15px auto;
-        width: 40vw;
-        // min-width: 40vw;
-        // max-width: 40vw;
-        // height: 31.98rem;
-        margin-bottom:30px;
-    }
- }
-
-
-@media (max-width:700px){
-    .rentalCard{
-        margin: 0px auto 20px;
-        // min-width: 75vw;
-       width: 90vw;
-       max-width:500px;
-        height: 31.98rem;
-        // margin-bottom:30px;
-    }
-    .rentalCard:hover{
-        transform: scale(1.05);
-        transition-duration: .3s;
+    @include mobile-view {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+      line-height: 3.5rem;
+      color: $white-color;
     }
 
-    .rentalCard h2{     
-        position:absolute;
-        left:0;
-        bottom:0;
-        // height:40px;
-        margin: 0;
-        // padding: 0 40% 2rem 3rem !important;
-        // font-size:2.250rem;
-        // font-weight: 800;
-        line-height: 3.5rem ;
-        color:var(--white-color);
+    &__text {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0 1.5rem 1.8rem 1.5rem !important;
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.8rem;
+      color: $white-color;
     }
+  }
 }
