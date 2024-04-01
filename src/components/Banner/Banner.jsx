@@ -4,8 +4,10 @@ import './Banner.scss';
 const Banner = ({ bannerImgLink, bannerText, altImg }) => {
   return (
     <div className="bannerContainer">
-      <img className='bannerImg' src={bannerImgLink} alt={altImg} />
-      <div className="bannerText">{bannerText}</div>
+      <img className='bannerContainer__Img' src={bannerImgLink} alt={altImg} />
+      <div className='bannerContainer__textContainer'>
+        {bannerText}
+      </div>
     </div>
   );
 };
