@@ -5,10 +5,13 @@ import './Page404.scss'
 
 export default function Page404() {
   return (
-    <>
-      <div className="errorCode">404</div>
-      <div className="errorMsg">Oups! La page que vous demandez n'existe pas.</div>
+    <main>
+      <h1 className="errorCode">404</h1>
+      <p className="errorMsg">
+        <span>Oups! La page que&nbsp;</span>
+        <span> vous demandez n'existe pas.</span>
+      </p>
       <Link className="linkToHome" to="/">Retourner sur la page d’accueil</Link>
-    </>
+    </main>
   )
 }
