@@ -1,64 +1,73 @@
-.bannerContainer{
+@import "../../scss/VariablesAndMixins";
+
+.bannerContainer {
     position: relative;
     // margin: 0 100px;
-    height:13.94rem;
+    height: 13.94rem;
     border-radius: 1.5rem;
-    box-shadow: inset 0 1000px 1000px 0 rgba(0,0,0,0.30);
+    box-shadow: inset 0 1000px 1000px 0 rgba(0, 0, 0, 0.30);
 
-    display:flex;
+    display: flex;
     overflow: hidden;
     align-items: center;
     justify-content: center;
+
+    &__Img {
+        width: 100%;
+    }
+
+    &__textContainer {
+        position: absolute;
+        width: 100%;
+        height: 13.94rem;
+        background: #00000080;
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 13.94rem;
+        text-align: center;
+        color: $white-color;
+        // offset-x | offset-y | blur-radius | color 
+        text-shadow: 0px 4px 4px #0000005b;
+
+        // This class exists when {bannerText} is a div containing spans (splitable text)
+        &-textBox {
+            height: 13.94rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
 }
 
-.bannerImg {
-    width:100%;
-}
-.bannerText{
-    position: absolute;
-    width: 100%;
-    height: 13.94rem;
-    background:#00000080;
-    font-size:3rem;
-    font-weight: bold;
-    line-height: 13.94rem;
-    text-align: center;
-    color:#fff;
-    /* offset-x | offset-y | blur-radius | color */
-    text-shadow: 0px 4px 4px #0000005b;
-}
-.bannerTextBox{
-    height: 13.94rem;;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
-@media (max-width:1250px){
-    .bannerContainer{
+
+@media (max-width:1250px) {
+    .bannerContainer {
         margin: auto;
-        width : 90vw;
+        width: $headerAndMain-responsive-width;
+        &__Img {
+            width: $headerAndMain-responsive-width;
+        }
     }
 }
 
 
-@media (max-width:700px){
+@media (max-width:700px) {
 
-    .bannerContainer{
-        width: 90vw;
-        margin: auto;
-    }
-    .bannerText{
-        padding:0 3rem;
-        line-height: 3rem;
-       
+    .bannerContainer {
+
+        &__textContainer {
+            padding: 0 3rem;
+            line-height: 3rem;
+
+            &-textBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
     }
 
-    .bannerTextBox{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
 
 }
