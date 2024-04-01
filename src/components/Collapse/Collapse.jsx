@@ -10,13 +10,14 @@ export default function Collapse({ title, content }) {
 
     return (
         <div className="collapse">
-            <div className="collapseHeader" onClick={toggleCollapse}>
-                <div>{title}</div>
-                <div className="collapseArrow">
+            <div className="collapse__header" onClick={toggleCollapse}>
+                {title}
+                {/* <h2 className='collapse__header__title'></h2> */}
+                <div className="collapse__header__arrowBox">
                     {isExpanded ? <i className="fas fa-chevron-up isExpanded"></i> : <i className="fas fa-chevron-up"></i>}
                 </div>
             </div>
-            <div className={`collapseContent ${isExpanded ? 'isExpanded' : ''}`}>
+            <div className={`collapse__content ${isExpanded ? 'isExpanded' : ''}`}>
                 {Array.isArray(content) ? (
                     content.map((element, index) => <span key={index}>{element}</span>)
                 ) : (
