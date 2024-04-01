@@ -1,61 +1,101 @@
-.rentalOfferDetailsContainer{
+// $redColor: $red-color;
+@import "../../scss/VariablesAndMixins";
+
+.offerDetailsContainer {
     margin: auto;
-    max-width: 1240px;
+    max-width: 77.5rem;
+
+    &__Summary {
+        padding: 1.563rem 0 0.375rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile-view {
+            flex-direction: column;
+
+        }
+
+        &__titleAndLocation {
+
+            &__title {
+                font-size: 2.25rem;
+                color: $red-color;
+                font-weight: 500;
+            }
+
+            &__location {
+                line-height: 3.125rem;
+                font-size: 1.125rem;
+                font-weight: 600;
+
+                @include mobile-view {
+                    line-height: 3.3rem;
+                    font-size: 1.75rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__hostInfos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            @include mobile-view {
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+
+            &__identity {
+                @include flexCenter;
+
+                &__name {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    padding: 0.625rem;
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    color: $red-color;
+                }
+
+                &__portrait {
+                    height: 4rem;
+                    width: 4rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    @include flexCenter;
+
+                    &>img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__collapses {
+        padding: 0 0 2.188rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 6%;
+        align-items: flex-start;
+
+        @include tablet-view {
+            flex-direction: column;
+        }
+
+        @include mobile-view {
+            padding: 0 0 1.7rem;
+        }
+
+        &>.collapseHeader {
+            margin: 0;
+            border-radius: 0.625rem;
+            padding: 0.625rem 1.563rem 0.625rem 0.625em;
+            align-items: center;
+            font-size: 1.125rem;
+        }
+    }
 }
-
-.rentalOfferTitle{
-    font-size: 36px;
-    color: var(--red-color);
-}
-
-
-
-.hostIdentity{
-    display: flex;
-    align-items: center;
-
-}
-
-.rentalOfferSummary{
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.hostName{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--red-color);
-}
-
-.hostPortrait {
-    height: 64px;
-    width: 64px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.hostPortrait img {
-    width: 100%;
-}
-
-.rentalOfferCollapses{
-    padding: 0 0 52px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10%;
-    align-items:flex-start;
-    
-}
-
-/* .collapse{
-    margin: 0;
-    width: 45%;
-    padding: 10px 0;
-} */
