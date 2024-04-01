@@ -1,78 +1,129 @@
-.collapse{
-    // margin: auto;
+@import "../../scss/VariablesAndMixins";
+
+.collapse {
     width: 100%;
-    padding: 15px 0;
-    
+    padding: 0.938rem 0;
+
+    &__header {
+        height: 3.25rem;
+        border-radius: 0.313rem;
+        padding: 0 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $red-color;
+        font-size: 1.438rem;
+        font-weight: 700;
+        color: $white-color;
+        @include mobile-view {
+                height: 3.75rem;
+                // border-radius: 0.313rem;
+                // padding: 0 1.25rem;
+                // display: flex;
+                // justify-content: space-between;
+                // align-items: center;
+                // background-color: $red-color;
+                font-size: 1.625rem;
+                font-weight: 700;
+                // color: $white-color;            
+        }
+
+        &__title {
+            color: green;
+        }
+
+        &__arrowBox {
+            font-size: 1.625rem;
+
+            &>.fas {
+                color: var($white-color);
+                transition: transform 0.3s;
+            }
+
+            &>.fas.isExpanded {
+                transform: rotate(-180deg);
+                transition: transform 0.3s;
+            }
+
+        }
+
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        border-radius: 0 0.313rem 0.313rem 0;
+        background-color: $lightGrey-color;
+        line-height: 1.875rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-align: justify;
+        hyphens: auto;
+
+        
+
+        &.isExpanded {
+            border-radius: 0 0.313rem 0.313rem 0;
+            padding: 1.25rem;
+            animation: slideDown 5s ease-out forwards;
+        }
+
+        &.isCollapsed {
+            animation: slideUp 5s ease-out forwards;
+        }
+
+        &>span {
+            display: block;
+        }
+
+    }
+
 }
 
-.collapseHeader{
-    // margin: 20px;
-    height: 52px;
-    border-radius: 5px;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FF6060;
-    // font-family: 'Montserrat', sans-serif;
-    font-size: 23px;
-    font-weight: 700;
-    color: white;
-}  
-.collapseContent{
-    max-height: 0;
-    overflow: hidden;
-    border-radius: 0 5px 5px 0;
-    background-color: #F6F6F6;
-    line-height: 30px;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: justify;
-    hyphens: auto;
-    // transition: max-height 5s ease out;
-}
-
-
-  
-  .collapseContent.isExpanded {
-      border-radius: 0 5px 5px 0;
-      padding: 20px;
-      animation: slideDown 5s ease-out forwards;   
-  }
-  
-  .collapseContent.isCollapsed {
-      animation: slideUp 5s ease-out forwards;
-  }
 
 
 
-.collapseContent span {
-    display: block;
-}
-
-.collapseArrow{
-    // font-weight: 300;
-    font-size: 26px;
-    // color: blue($color: #000000);
-}
-.fas{
-    color: var(--white-color);
-    transition: transform 0.3s;
-}
-
-.fas.isExpanded{
-    transform: rotate(-180deg);
-    transition: transform 0.3s;
-}
-
+//== Keyframes ==
 
 
 @keyframes slideDown {
-    0% { max-height: 0; }
-    100% { max-height: 100vh; }
-  }
-  
-  @keyframes slideUp {
-    0% { max-height: 100vh; }
-    100% { max-height: 0; }
-  }
+    0% {
+        max-height: 0;
+    }
+
+    100% {
+        max-height: 100vh;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        max-height: 100vh;
+    }
+
+    100% {
+        max-height: 0;
+    }
+}
+
+@media (max-width:1250px) {}
+
+@media (max-width:700px) {
+
+    // .collapse{
+    //     padding: 1.25rem;
+    // }
+
+    .collapseHeader {
+        height: 3.75rem;
+        border-radius: 0.313rem;
+        padding: 0 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $red-color;
+        font-size: 1.625rem;
+        font-weight: 700;
+        color: $white-color;
+    }
+}
