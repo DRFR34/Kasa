@@ -11,7 +11,7 @@ export default function AppRoutes() {
       <Route path="/Kasa" element={<HomePage />} />
       <Route path="/Kasa/a-propos" element={<AboutPage />} />
       <Route path="/Kasa/locations/:rentalOfferId" element={<OfferDetailsPage />} />
-      <Route path="*" element={<Page404 />} />
+      <Route path="/Kasa/*" element={<Page404 />} />
     </Routes>
   );
 }
