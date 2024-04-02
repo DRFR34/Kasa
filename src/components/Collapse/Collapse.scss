@@ -29,14 +29,14 @@
         }
 
         &__title {
-            color: green;
+            color: $white-color;
         }
 
         &__arrowBox {
             font-size: 1.625rem;
 
             &>.fas {
-                color: var($white-color);
+                color: $white-color;
                 transition: transform 0.3s;
             }
 
