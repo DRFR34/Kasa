@@ -34,12 +34,16 @@ export default function Slider({ rentalOfferPictures }) {
 
         </div>
       ))}
-      <div className="arrowBox previous" onClick={previousSlide}><i className="fa-solid fa-chevron-left"></i></div>
-      <div className="arrowBox next" onClick={nextSlide} ><i className="fa-solid fa-chevron-right"></i></div>
-      <div className="pictureRankBox" >
-        <span>{current + 1}</span>
-        <span> / {rentalOfferPictures.length}</span>
-      </div>
+      {rentalOfferPictures.length > 1 && (
+        <>
+          <div className="arrowBox previous" onClick={previousSlide}><i className="fa-solid fa-chevron-left"></i></div>
+          <div className="arrowBox next" onClick={nextSlide} ><i className="fa-solid fa-chevron-right"></i></div>
+          <div className="pictureRankBox" >
+            <span>{current + 1}</span>
+            <span> / {rentalOfferPictures.length}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 };
