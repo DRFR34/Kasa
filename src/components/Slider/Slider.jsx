@@ -6,7 +6,6 @@ export default function Slider({ rentalOfferPictures }) {
 
   const nextSlide = () => {
     setCurrent(current === rentalOfferPictures.length - 1 ? 0 : current + 1);
-    // setCurrent(current + 1);
   };
 
   const previousSlide = () => {
